@@ -1,0 +1,9 @@
+.App-footer {
+    padding: 20px;
+    background-color: $background-color;
+    color: $color-white;
+  
+    @include respond-to('mobile') {
+      padding: 10px;
+    }
+}

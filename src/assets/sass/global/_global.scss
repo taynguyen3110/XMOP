@@ -1,0 +1,34 @@
+.App {
+    text-align: center;
+  
+    &-body {
+      padding: 20px;
+  
+      @include respond-to('mobile') {
+        padding: 10px;
+      }
+    }
+
+  .App-body {
+    background: #292c2e;
+    color: white;
+
+    input, select {
+      background: rgb(118, 118, 118),;
+      color: white;
+      border: 1px solid #1a1a1a;
+
+      &::placeholder {
+        color: rgb(158, 205, 177);
+      }
+
+      span {
+        color: rgb(158, 205, 177);
+      }
+    }
+  }
+
+  button {
+    background: green;
+  }
+}

@@ -1,0 +1,32 @@
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: $background-color;
+  color: $color-white;
+
+  @include respond-to('mobile') {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .App-logo {
+    height: 40px; // 로고 크기 조정
+  }
+
+  .App-nav {
+    display: flex;
+    gap: 20px; // 네비게이션 메뉴 간격 조정
+
+    a {
+      color: $color-white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: blue; // 호버 시 색상 변경
+      }
+    }
+  }
+}

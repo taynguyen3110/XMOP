@@ -1,0 +1,30 @@
+{
+  "1712728192605": {
+    "workspace": "test 2",
+    "deployment-time": "1712728192605",
+    "destroy-time": "",
+    "user-id": "taynguyen3110",
+    "status": "failed"
+  },
+  "1712730386531": {
+    "workspace": "test 2",
+    "deployment-time": "1712730386531",
+    "destroy-time": "1712730386831",
+    "user-id": "taynguyen3110",
+    "status": "destroyed"
+  },
+  "1713230150104": {
+    "workspace": "testnew",
+    "deployment-time": "1713230150104",
+    "destroy-time": "1713238971439",
+    "user-id": "taynguyen3110",
+    "status": "destroyed"
+  },
+  "1713233065452": {
+    "workspace": "test1",
+    "deployment-time": "1713233065452",
+    "destroy-time": "",
+    "user-id": "taynguyen3110",
+    "status": "ongoing"
+  }
+}

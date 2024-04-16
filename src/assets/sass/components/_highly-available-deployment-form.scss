@@ -1,0 +1,49 @@
+.deployment-form {
+  .ec2, .rds {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem;
+    border: solid grey;
+    padding: 1em;
+
+    .form-label {
+      font-size: 20px;
+      margin: 0.7rem 0;
+      transition: transform 0.3s ease;
+      
+      .form-input {
+        margin: 3px;
+        padding: 0px;
+        min-width: 12em;
+        font-size: 18px;
+      }
+
+      &:hover {
+        color: #006F50;
+      }
+    }
+  
+    .sub-label {
+      padding-left: 2rem;
+    }
+  }
+
+  .submit-button {
+    display: block;
+    color: white;
+    background: #016549;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
+    text-align: left;
+    padding: 0.5em 1em;
+    margin: 2rem;
+
+    &:hover {
+        transform: scale(1.15); 
+    }
+  }
+}

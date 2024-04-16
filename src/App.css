@@ -1,0 +1,278 @@
+.deployment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 2rem;
+}
+
+.deployment-form .form-label {
+  font-size: 17px;
+  margin: 0.5rem 0;
+}
+
+.deployment-form .form-label .form-input {
+  margin: 3px;
+}
+
+.deployment-form .sub-label {
+  padding-left: 1rem;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-body {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .App-body {
+    padding: 10px;
+  }
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding: 10px;
+    flex-direction: column;
+  }
+}
+
+.App-header .App-logo {
+  height: 40px;
+}
+
+.App-header .App-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.App-header .App-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.App-header .App-nav a:hover {
+  color: blue;
+}
+
+.App-footer {
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .App-footer {
+    padding: 10px;
+  }
+}
+
+/* General App styling */
+.App {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home section styling */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0a0a, #88d3ce);
+}
+
+/* Signup form styling */
+.signup {
+  height: 100vh;
+  padding: 30px;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0a0a0a, #88d3ce);
+
+}
+
+/* General form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+}
+
+.formfield {
+  margin: 15px 0;
+}
+
+/* Input styling */
+input,
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Login form styling */
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0a0a, #88d3ce);
+}
+
+/* Dashboard styling */
+.Dashboard {
+  margin: 2em;
+  padding: 2em;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #dfdcdc, #88d3ce);
+
+}
+
+.confirmSignup {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0a0a, #88d3ce);
+}
+
+.ForgotPassword {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0a0a, #88d3ce);
+}
+
+/*# sourceMappingURL=App.css.map */
+.workspace {
+  margin: 2em;
+  padding: 2em;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #dfdcdc, #88d3ce);
+}
+.workspace h1 {
+  align-self: center;
+  width: 100%;
+}
+.workspace input, .workspace form, .workspace div {
+  border-bottom: 1px solid #000000;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: calc(100% - 30px);
+  box-sizing: border-box;
+  text-align: left;
+}
+.workspace input select, .workspace form select, .workspace div select {
+  font-size: 18px;
+  padding: 7px;
+  border-radius: 5px;
+  margin-right: 1em;
+}
+.workspace input ul, .workspace form ul, .workspace div ul {
+  padding-left: 1em;
+}
+
+.deployment-form .ec2, .deployment-form .rds {
+  margin: 2em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #dfdcdc, #88d3ce);
+}
+.deployment-form .ec2 .form-label, .deployment-form .rds .form-label {
+  font-size: 20px;
+  margin: 0.7rem 0;
+  transition: transform 0.3s ease;
+}
+.deployment-form .ec2 .form-label .form-input, .deployment-form .rds .form-label .form-input {
+  margin: 3px;
+  padding: 0px;
+  min-width: 12em;
+  font-size: 18px;
+}
+.deployment-form .ec2 .form-label:hover, .deployment-form .rds .form-label:hover {
+  color: #006F50;
+}
+.deployment-form .ec2 .sub-label, .deployment-form .rds .sub-label {
+  padding-left: 2rem;
+}
+.deployment-form .submit-button {
+  display: block;
+  color: white;
+  background: #016549;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  transition: transform 0.3s ease;
+  text-align: left;
+  padding: 0.5em 1em;
+  margin: 2rem;
+}
+.deployment-form .submit-button:hover {
+  transform: scale(1.15);
+}

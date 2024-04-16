@@ -1,0 +1,7 @@
+@mixin respond-to($media) {
+    @if $media == 'mobile' {
+      @media (max-width: $mobile) {
+        @content;
+      }
+    }
+  }
