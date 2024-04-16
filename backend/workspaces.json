@@ -16,11 +16,5 @@
     "name": "test2",
     "region": "",
     "ongoingDeploy": ""
-  },
-  "test3": {
-    "id": "1713230558926",
-    "name": "test3",
-    "region": "",
-    "ongoingDeploy": ""
   }
 }

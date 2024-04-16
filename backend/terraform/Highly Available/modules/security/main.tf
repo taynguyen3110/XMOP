@@ -35,7 +35,7 @@ resource "aws_security_group" "bastion_sg" {
   }
 
   tags = {
-    Name = "RDS Security Group - ${var.id}"
+    Name = "Bastion Security Group - ${var.id}"
   }
 }
 

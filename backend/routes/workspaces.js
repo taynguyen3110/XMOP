@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     const region = "";
     const ongoingDeploy = "";
     workspaces[name] = { id, name, region, ongoingDeploy };
-    saveWorkspacesToFile();
+    saveWorkspacesToFile(workspaces);
     // Create the parent directory if it doesn't exist
     fs.mkdir('./workspaces', { recursive: true }, (err) => {
         if (err) {
@@ -97,7 +97,7 @@ router.delete('/:name', (req, res) => {
         // Remove the directory associated with the workspace
         fs.rm(`./workspaces/${name}`, { recursive: true });
         delete workspaces[name];
-        saveWorkspacesToFile();
+        saveWorkspacesToFile(workspaces);
         res.json({ message: 'Workspace deleted successfully' });
         // res.send('Workspace deleted successfully');
     } catch (err) {
@@ -107,7 +107,7 @@ router.delete('/:name', (req, res) => {
 });
 
 // Function to save workspaces data to file
-function saveWorkspacesToFile() {
+function saveWorkspacesToFile(workspaces) {
     const data = JSON.stringify(workspaces, null, 2);
     fs.writeFileSync(WORKSPACES_FILE_PATH, data, 'utf8');
 }

@@ -69,7 +69,7 @@ resource "aws_autoscaling_policy" "scale_out_policy" {
 resource "aws_cloudwatch_metric_alarm" "scale_out" {
   alarm_description   = "Monitors Request Count for Wordpress ASG"
   alarm_actions       = [aws_autoscaling_policy.scale_out_policy.arn] # Scale out when the alarm is triggered
-  alarm_name          = "wordpress_scale_up"
+  alarm_name          = "wordpress_scale_up_${var.id}"
   comparison_operator = "GreaterThanOrEqualToThreshold" # Comparison operator
   namespace           = "AWS/EC2"
   metric_name         = "RequestCountPerTarget" # Name of the metric
@@ -95,7 +95,7 @@ resource "aws_autoscaling_policy" "scale_in_policy" {
 resource "aws_cloudwatch_metric_alarm" "scale_in" {
   alarm_description   = "Monitors Request Count for Wordpress ASG"
   alarm_actions       = [aws_autoscaling_policy.scale_in_policy.arn] # Scale in when the alarm is triggered
-  alarm_name          = "wordpress_scale_down"
+  alarm_name          = "wordpress_scale_down_${var.id}"
   comparison_operator = "LessThanOrEqualToThreshold" # Comparison operator
   namespace           = "AWS/EC2"
   metric_name         = "RequestCountPerTarget" # Name of the metric
