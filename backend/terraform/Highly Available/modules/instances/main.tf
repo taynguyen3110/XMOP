@@ -65,22 +65,23 @@ resource "aws_autoscaling_policy" "scale_out_policy" {
   cooldown               = 120 # Cooldown period in seconds
 }
 
-# CloudWatch metric alarm for scale out policy
+# CloudWatch metric alarm for scale out policy based on CPU utilization
 resource "aws_cloudwatch_metric_alarm" "scale_out" {
-  alarm_description   = "Monitors Request Count for Wordpress ASG"
+  alarm_description   = "Monitors CPU Utilization for Wordpress ASG"
   alarm_actions       = [aws_autoscaling_policy.scale_out_policy.arn] # Scale out when the alarm is triggered
   alarm_name          = "wordpress_scale_up_${var.id}"
   comparison_operator = "GreaterThanOrEqualToThreshold" # Comparison operator
   namespace           = "AWS/EC2"
-  metric_name         = "RequestCountPerTarget" # Name of the metric
-  threshold           = "10"                    # Threshold value for request count
+  metric_name         = "CPUUtilization" # Name of the metric
+  threshold           = "70"                    # Threshold value for CPU utilization (in percentage)
   evaluation_periods  = "2"                     # Number of periods to evaluate
-  period              = "10"                    # Period of the metric in seconds
-  statistic           = "Sum"                   # Sum of request count over the specified time period
+  period              = "300"                   # Period of the metric in seconds (5 minutes)
+  statistic           = "Average"               # Average CPU utilization over the specified time period
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.wordpress_asg.name # Dimension for autoscaling group
   }
 }
+
 
 # Scale in policy: Decreases the number of instances when CPU utilization is lower than 10%
 resource "aws_autoscaling_policy" "scale_in_policy" {
@@ -91,19 +92,20 @@ resource "aws_autoscaling_policy" "scale_in_policy" {
   cooldown               = 120 # Cooldown period in seconds
 }
 
-# CloudWatch metric alarm for scale in policy
+# CloudWatch metric alarm for scale in policy based on CPU utilization
 resource "aws_cloudwatch_metric_alarm" "scale_in" {
-  alarm_description   = "Monitors Request Count for Wordpress ASG"
+  alarm_description   = "Monitors CPU Utilization for Wordpress ASG"
   alarm_actions       = [aws_autoscaling_policy.scale_in_policy.arn] # Scale in when the alarm is triggered
   alarm_name          = "wordpress_scale_down_${var.id}"
   comparison_operator = "LessThanOrEqualToThreshold" # Comparison operator
   namespace           = "AWS/EC2"
-  metric_name         = "RequestCountPerTarget" # Name of the metric
-  threshold           = "5"                     # Threshold value for request count
+  metric_name         = "CPUUtilization" # Name of the metric
+  threshold           = "20"                    # Threshold value for CPU utilization (in percentage)
   evaluation_periods  = "2"                     # Number of periods to evaluate
-  period              = "10"                    # Period of the metric in seconds
-  statistic           = "Sum"                   # Sum of request count over the specified time period
+  period              = "300"                   # Period of the metric in seconds (5 minutes)
+  statistic           = "Average"               # Average CPU utilization over the specified time period
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.wordpress_asg.name # Dimension for autoscaling group
   }
 }
+
