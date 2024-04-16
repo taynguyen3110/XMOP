@@ -22,7 +22,6 @@ const WorkspaceList = () => {
     if (!timestamp) return 'N/A';
     return new Date(parseInt(timestamp, 10)).toLocaleString();
   };
-  console.log(workspaces);
   return (
     <div>
       {/* <h3>Available Workspaces</h3>
