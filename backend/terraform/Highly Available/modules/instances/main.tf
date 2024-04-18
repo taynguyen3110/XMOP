@@ -75,7 +75,7 @@ resource "aws_cloudwatch_metric_alarm" "scale_out" {
   metric_name         = "CPUUtilization" # Name of the metric
   threshold           = "70"                    # Threshold value for CPU utilization (in percentage)
   evaluation_periods  = "2"                     # Number of periods to evaluate
-  period              = "300"                   # Period of the metric in seconds (5 minutes)
+  period              = "60"                   # Period of the metric in seconds (1 minutes)
   statistic           = "Average"               # Average CPU utilization over the specified time period
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.wordpress_asg.name # Dimension for autoscaling group
@@ -102,7 +102,7 @@ resource "aws_cloudwatch_metric_alarm" "scale_in" {
   metric_name         = "CPUUtilization" # Name of the metric
   threshold           = "20"                    # Threshold value for CPU utilization (in percentage)
   evaluation_periods  = "2"                     # Number of periods to evaluate
-  period              = "300"                   # Period of the metric in seconds (5 minutes)
+  period              = "60"                   # Period of the metric in seconds (1 minutes)
   statistic           = "Average"               # Average CPU utilization over the specified time period
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.wordpress_asg.name # Dimension for autoscaling group

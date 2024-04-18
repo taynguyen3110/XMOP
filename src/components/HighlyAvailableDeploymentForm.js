@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import userpool from '../userpool';
 import { logout } from '../services/authenticate';
+import logo from '../logo.svg';
 
 const HighlyAvailableDeploymentForm = () => {
   /* EC2 Configuration Consts */
@@ -459,9 +460,18 @@ const HighlyAvailableDeploymentForm = () => {
 
   return (
     <div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <nav className="App-nav">
+          <a href="/workspace">Workspaces</a>
+          <a href="/deploy-form">Deployment Form</a>
+          <a href="/dashboard">Deployment History</a>
+          <Button variant='contained' onClick={handleLogout}>Logout</Button>
+        </nav>
+      </header>
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: 'auto', marginBottom: '20px', width: '80%' }}>
         <h1>Highly Available Deployment Form</h1>
-        <Button variant='contained' onClick={handleLogout}>Logout</Button>
+        {/* <Button variant='contained' onClick={handleLogout}>Logout</Button> */}
       </header>
       <form className="deployment-form" onSubmit={handleSubmit}>
         <div className="ec2">
@@ -775,6 +785,9 @@ const HighlyAvailableDeploymentForm = () => {
         <textarea id="logContent" rows="20" cols="120" readOnly></textarea>
         <button id="hideLogBtn" onClick={() => hideLogContainer()}>Close</button>
       </div>
+      <footer className="App-footer">
+        <p>© 2024 Swinburne TIP X-MOP Team. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

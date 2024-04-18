@@ -23,8 +23,43 @@
   "1713233065452": {
     "workspace": "test1",
     "deployment-time": "1713233065452",
+    "destroy-time": "1713268743134",
+    "user-id": "taynguyen3110",
+    "status": "destroyed"
+  },
+  "1713242163491": {
+    "workspace": "test2",
+    "deployment-time": "1713242163491",
     "destroy-time": "",
     "user-id": "taynguyen3110",
-    "status": "ongoing"
+    "status": "destroyed"
+  },
+  "1713267837228": {
+    "workspace": "test1-1",
+    "deployment-time": "1713267837228",
+    "destroy-time": "1713448512936",
+    "user-id": "taynguyen3110",
+    "status": "destroyed"
+  },
+  "1713269283740": {
+    "workspace": "test1-2",
+    "deployment-time": "1713269283740",
+    "destroy-time": "1713448751952",
+    "user-id": "taynguyen3110",
+    "status": "destroyed"
+  },
+  "1713317810359": {
+    "workspace": "test1-3",
+    "deployment-time": "1713317810359",
+    "destroy-time": "1713320123692",
+    "user-id": "sumitruhal",
+    "status": "destroyed"
+  },
+  "1713330965315": {
+    "workspace": "tset1-6",
+    "deployment-time": "1713330965315",
+    "destroy-time": "1713332658561",
+    "user-id": "taynguyen3110",
+    "status": "destroyed"
   }
 }

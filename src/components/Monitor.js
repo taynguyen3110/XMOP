@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userpool from '../userpool';
 import LineGraph from './LineGraph';
+import logo from '../logo.svg';
+import { Button } from '@mui/material';
+import { logout } from '../services/authenticate';
 
 const Monitoring = () => {
   const [isDestroying, setIsDestroying] = useState(false);
@@ -47,6 +50,11 @@ const Monitoring = () => {
         console.error('Error check state file:', error);
       });
   }, []);
+
+const handleLogout = () => {
+        logout();
+        navigate('/login');
+    };
 
   // Get metrics data
   useEffect(() => {
@@ -256,6 +264,15 @@ const Monitoring = () => {
 
   return (
     <div>
+	     <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <nav className="App-nav">
+                    <a href="/workspace">Workspaces</a>
+                    <a href="/deploy-form">Deployment Form</a>
+                    <a href="/dashboard">Deployment History</a>
+                    <Button variant='contained' onClick={handleLogout}>Logout</Button>
+                </nav>
+            </header>
       <div>
         <h2>Monitoring Workspace: {`${localStorage.getItem('workspace')}`}</h2>
         <a href={`http://${lbDNS}/wordpress`} target={"_blank"}><p>${lbDNS}</p></a>
@@ -287,7 +304,9 @@ const Monitoring = () => {
       <button className="destroy-button" onClick={handleDestroy} disabled={isPlanningDestroy || isDestroying}>
         {isPlanningDestroy ? 'Planning Destroy' : (isDestroying ? 'Destroying' : 'Destroy')}
       </button>
-
+      <footer className="App-footer">
+        <p>© 2024 Swinburne TIP X-MOP Team. All rights reserved.</p>
+      </footer>
     </div>
   );
 

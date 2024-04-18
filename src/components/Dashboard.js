@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import userpool from '../userpool';
 import { logout } from '../services/authenticate';
 import deploymentsData from '../deployment.json';
+import logo from '../logo.svg';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -35,9 +36,17 @@ const Dashboard = () => {
 
   return (
     <div className='Dashboard' style={{ padding: '20px' }}>
+<header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <nav className="App-nav">
+                    <a href="/workspace">Workspaces</a>
+                    <a href="/deploy-form">Deployment Form</a>
+                    <a href="/dashboard">Deployment History</a>
+                    <Button variant='contained' onClick={handleLogout}>Logout</Button>
+                </nav>
+            </header>
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <h1>Deployment History Overview</h1>
-        <Button variant='contained' onClick={handleLogout}>Logout</Button>
       </header>
 
       {/* <section style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
@@ -93,6 +102,9 @@ const Dashboard = () => {
           </TableBody>
         </Table>
       </TableContainer>
+<footer className="App-footer">
+                <p>© 2024 Swinburne TIP X-MOP Team. All rights reserved.</p>
+            </footer>
     </div>
   );
 };

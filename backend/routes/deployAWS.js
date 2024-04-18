@@ -143,9 +143,11 @@ function waitForProcessCompletion(process, processName, workspace) {
         process.stdout.on('data', data => {
             stdout += data.toString();
         });
+
         process.stderr.on('data', data => {
             stderr += data.toString();
         });
+
         process.on('close', code => {
             resolve({ code, stdout, stderr });
             const stdoutFilePath = `./workspaces/${workspace}/terraform/Highly Available/stdout.txt`;
@@ -154,11 +156,15 @@ function waitForProcessCompletion(process, processName, workspace) {
             if (stdoutFilePath) {
                 saveToFile(stdoutFilePath, stdout);
             }
+
             // Save stderr to file
             if (stderrFilePath) {
                 saveToFile(stderrFilePath, stderr);
             }
+
         });
+
+
         process.on('error', error => {
             reject(new Error(`${processName} process encountered an error: ${error.message}`));
         });

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css'; // App.css 대신 App.scss 사용
 import HighlyAvailableDeploymentForm from './components/HighlyAvailableDeploymentForm';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
@@ -24,15 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <nav className="App-nav">
-          <a href="/workspace">Workspaces</a>
-          <a href="/deploy-form">Deployment Form</a>
-          <a href="/dashboard">Deployment History</a>
-        </nav>
-      </header>
-      <main className="App-body">
+       <main className="App-body">
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -47,10 +38,7 @@ function App() {
           </Routes>
         </Router>
       </main>
-      <footer className="App-footer">
-        <p>© 2024 Swinburne TIP X-MOP Team. All rights reserved.</p>
-      </footer>
-    </div>
+     </div>
   );
 }
 

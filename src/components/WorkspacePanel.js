@@ -8,6 +8,7 @@ import DeleteWorkspaceForm from './DeleteWorkspaceForm';
 import SelectWorkspaceDropdown from './SelectWorkspaceDropdown';
 import WorkspaceList from './WorkspaceList';
 import { logout } from '../services/authenticate';
+import logo from '../logo.svg';
 
 const WorkspacePanel = () => {
     const [workspaces, setWorkspaces] = useState([]);
@@ -55,15 +56,26 @@ const WorkspacePanel = () => {
     };
     return (
         <div className='workspace' style={{ padding: '20px' }}>
+		<header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <nav className="App-nav">
+                    <a href="/workspace">Workspaces</a>
+                    <a href="/deploy-form">Deployment Form</a>
+                    <a href="/dashboard">Deployment History</a>
+                    <Button variant='contained' onClick={handleLogout}>Logout</Button>
+                </nav>
+            </header>
             <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', width: '100%' }}>
                 <h1>Workspaces</h1>
-                <Button variant='contained' onClick={handleLogout}>Logout</Button>
             </header>
             <p><em>You need to choose a workspace for deployment or for monitoring</em></p>
             <CreateWorkspaceForm onUpdate={() => setWorkspaces([...workspaces])} />
             <SelectWorkspaceDropdown workspaces={workspaces} onSelect={(selectedWorkspaceId) => console.log(selectedWorkspaceId)} />
             <DeleteWorkspaceForm workspaces={workspaces} onDelete={handleDeleteWorkspace} />
             {<WorkspaceList />}
+<footer className="App-footer">
+                <p>© 2024 Swinburne TIP X-MOP Team. All rights reserved.</p>
+            </footer>
         </div>
     );
 };

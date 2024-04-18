@@ -59,6 +59,7 @@
 
 .App-header .App-nav a {
   color: white;
+  padding: 10px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -165,8 +166,8 @@ button:hover {
 
 /* Dashboard styling */
 .Dashboard {
-  margin: 2em;
-  padding: 2em;
+  /* margin: 0%;
+  padding: 0%; */
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -200,8 +201,8 @@ button:hover {
 
 /*# sourceMappingURL=App.css.map */
 .workspace {
-  margin: 2em;
-  padding: 2em;
+  /* margin: 2em;
+  padding: 2em; */
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -236,8 +237,9 @@ button:hover {
   padding: 2em;
   display: flex;
   flex-direction: column; 
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width:80%;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
