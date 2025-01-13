@@ -14,11 +14,11 @@
   - [Instances Module](#instances-module)
   - [Security Module](#security-module)
 - [Guides for Common Tasks](#guides-for-common-tasks)
+- [Deployed Wordpress Servers](#deployed-wordpress-servers)
+- [Deployments Logs](#deployments-logs)
 - [Tips and Best Practices](#tips-and-best-practices)
-- [Hosting on EC2 with pm2](#hosting-on-ec2-with-pm2)
 - [API Documentation](#api-documentation)
 - [Troubleshooting Steps and Solutions](#troubleshooting-steps-and-solutions)
-- [Reflection](#reflection)
 
 ---
 
@@ -111,7 +111,7 @@ XMOP uses a highly available and scalable AWS architecture to deploy WordPress a
 
   ![Alt text](screenshots/image-7.png)
 
-## Deployed Wordpress Servers:
+## Deployed Wordpress Servers
 
 - Wordpress are pre installed with user data script, allow users to work on.
 
@@ -121,7 +121,7 @@ XMOP uses a highly available and scalable AWS architecture to deploy WordPress a
 
   ![Alt text](screenshots/image-9.png)
 
-## Deployments Logs:
+## Deployments Logs
 
 - Logs on history deployments are saved.
 
