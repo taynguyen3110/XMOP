@@ -22,20 +22,21 @@
 
 ## Introduction
 
-XMOP is a centralized control plane designed to streamline and accelerate redundant tasks for the Xmops team. It serves as a platform for managing various operations related to infrastructure provisioning and deployment. XMOP enhances efficiency, security, and scalability by providing automated solutions and centralized control over deployment processes.
+XMOP is a centralized control plane designed to streamline and accelerate redundant tasks. It serves as a platform for managing various operations related to infrastructure provisioning and deployment on AWS. XMOP enhances efficiency, security, and scalability by providing automated solutions and centralized control over deployment processes.
 
 Key features of XMOP include:
-- **Secure Authentication**: Multi-factor authentication using Amazon Cognito for team members.
+- **Secure Authentication**: Multi-factor authentication using Amazon Cognito.
 - **Efficient Infrastructure Deployment**: Automates the deployment of infrastructure components using Terraform.
 - **User-Friendly Front-End**: Provides an intuitive interface for managing deployments, including dashboards and history tracking.
 - **Workspace Feature**: Allows users to manage deployments across different workspaces for collaboration and multi-user environments.
+- **Monitoring interface**: Allows users to monitor metrics of each deployments on AWS.
 
 ---
 
 ## Installation
 
 ### Dependencies:
-- AWS credentials with necessary permissions set in environment variables.
+- AWS credentials with necessary permissions set in .env file.
 - Node.js and npm installed.
 - Terraform installed.
 
@@ -51,16 +52,17 @@ Key features of XMOP include:
    cd backend
    node server.js
 4. Ensure you're not using incognito mode in your browser and leave the XMOP tab open during deployments for proper logging.
-Architecture
 
-## XMOP Architecture
+## Architecture
 
-XMOP integrates with AWS Cognito for user authentication and uses two primary databases:
+### XMOP Architecture
+
+XMOP integrates with AWS Cognito for user authentication and uses two databases:
 
 - Workspaces Database: Stores workspace information, including status and deployment details.
 - Deployments Database: Tracks individual deployment details, such as deployment ID, workspace, deployment time, and status.
 
-## Deployment Architecture with Terraform
+### Deployment Architecture with Terraform
 
 XMOP uses a highly available and scalable AWS architecture to deploy WordPress applications. It spans multiple availability zones to ensure fault tolerance.
 
@@ -90,13 +92,12 @@ XMOP uses a highly available and scalable AWS architecture to deploy WordPress a
 ### Deployment Process:
 
 - After selecting a workspace, the form data is sent to deploy the infrastructure via Terraform.
-- Confirmation boxes show the Terraform plan and initiate the apply process.
+- Confirmation boxes show the Terraform plan and initiate the deployment process.
 - The monitoring page will display deployment logs and resource counts once complete.
 
 ## Tips and Best Practices:
 
 - Do not use incognito mode or multiple sessions in the same browser.
-- Ensure that your local storage remains intact during deployment.
 - Keep track of workspaces and deployments using the provided tools in the interface.
   
 ## API Documentation
