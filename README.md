@@ -1,5 +1,7 @@
 # XMOP: Centralized Control Plane for Infrastructure Management
 
+![Alt text](screenshots/image-1.png)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installation](#installation)
