@@ -59,12 +59,16 @@ Key features of XMOP include:
 
 ### XMOP Architecture
 
+![Alt text](screenshots/image-2.png)
+
 XMOP integrates with AWS Cognito for user authentication and uses two databases:
 
 - Workspaces Database: Stores workspace information, including status and deployment details.
 - Deployments Database: Tracks individual deployment details, such as deployment ID, workspace, deployment time, and status.
 
 ### Deployment Architecture with Terraform
+
+![Alt text](screenshots/image-3.png)
 
 XMOP uses a highly available and scalable AWS architecture to deploy WordPress applications. It spans multiple availability zones to ensure fault tolerance.
 
@@ -87,6 +91,8 @@ XMOP uses a highly available and scalable AWS architecture to deploy WordPress a
 
 ### Workspace Management:
 
+![Alt text](screenshots/image-4.png)
+
 - Use the navigation bar to select a workspace and manage deployments.
 - Workspaces need unique names (lowercase alphanumeric characters and hyphens only).
 - The deployment form is used for managing deployments within the selected workspace.
@@ -94,8 +100,32 @@ XMOP uses a highly available and scalable AWS architecture to deploy WordPress a
 ### Deployment Process:
 
 - After selecting a workspace, the form data is sent to deploy the infrastructure via Terraform.
+
+  ![Alt text](screenshots/image-5.png)
+  
 - Confirmation boxes show the Terraform plan and initiate the deployment process.
+
+  ![Alt text](screenshots/image-6.png)
+
 - The monitoring page will display deployment logs and resource counts once complete.
+
+  ![Alt text](screenshots/image-7.png)
+
+## Deployed Wordpress Servers:
+
+- Wordpress are pre installed with user data script, allow users to work on.
+
+  ![Alt text](screenshots/image-8.png)
+  
+- The architecture with EFS allows media upload and sync between different EC2 machines.
+
+  ![Alt text](screenshots/image-9.png)
+
+## Deployments Logs:
+
+- Logs on history deployments are saved.
+
+  ![Alt text](screenshots/image-10.png)
 
 ## Tips and Best Practices:
 
